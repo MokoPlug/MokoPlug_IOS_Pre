@@ -42,7 +42,7 @@ TODO: Add long description of the pod here.
   s.subspec 'CTMediator' do |ss|
     ss.source_files = 'MKBLEMokoLife/Classes/CTMediator/**'
     
-    s.dependency 'CTMediator'
+    ss.dependency 'CTMediator'
   end
   
   s.subspec 'SDK-BML' do |ss|
