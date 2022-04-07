@@ -198,6 +198,8 @@ MKBMLTabBarControllerDelegate>
     [self.identifyCache removeAllObjects];
     [self.dataList removeAllObjects];
     [self.tableView reloadData];
+    //刷新顶部设备数量
+    [self.titleLabel setText:[NSString stringWithFormat:@"DEVICE(%@)",[NSString stringWithFormat:@"%ld",(long)self.dataList.count]]];
     [self.refreshIcon.layer addAnimation:[MKCustomUIAdopter refreshAnimation:2.f] forKey:@"mk_refreshAnimationKey"];
     [self scanTimerRun];
 }
@@ -265,6 +267,7 @@ MKBMLTabBarControllerDelegate>
             timeInterval = currentInterval;
             if (self.isNeedRefresh) {
                 [self.tableView reloadData];
+                [self.titleLabel setText:[NSString stringWithFormat:@"DEVICE(%@)",[NSString stringWithFormat:@"%ld",(long)self.dataList.count]]];
                 self.isNeedRefresh = NO;
             }
         }
@@ -400,7 +403,7 @@ MKBMLTabBarControllerDelegate>
 - (void)loadSubViews {
     [self.view setBackgroundColor:RGBCOLOR(245, 245, 245)];
     [self.rightButton setImage:LOADICON(@"MKBLEMokoLife", @"MKBMLScanController", @"mk_bml_scanRightAboutIcon.png") forState:UIControlStateNormal];
-    self.titleLabel.text = @"Moko Plug";
+    self.titleLabel.text = @"DEVICE(0)";
     UIView *topView = [[UIView alloc] init];
     topView.backgroundColor = RGBCOLOR(237, 243, 250);
     [self.view addSubview:topView];

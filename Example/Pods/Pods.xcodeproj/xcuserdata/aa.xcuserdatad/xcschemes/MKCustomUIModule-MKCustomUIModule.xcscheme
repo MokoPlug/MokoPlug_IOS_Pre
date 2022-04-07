@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "857B66AE655D8648879FA53A1A1C7A09"
-               BuildableName = "MKCustomUIModule.bundle"
+               BuildableName = "MKCustomUIModule-MKCustomUIModule.bundle"
                BlueprintName = "MKCustomUIModule-MKCustomUIModule"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
