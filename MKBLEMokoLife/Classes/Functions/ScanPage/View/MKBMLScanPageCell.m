@@ -121,7 +121,7 @@
 - (UILabel *)deviceNameLabel {
     if (!_deviceNameLabel) {
         _deviceNameLabel = [[UILabel alloc] init];
-        _deviceNameLabel.textColor = RGBCOLOR(38,129,255);
+        _deviceNameLabel.textColor = NAVBAR_COLOR_MACROS;
         _deviceNameLabel.font = MKFont(14.f);
         _deviceNameLabel.textAlignment = NSTextAlignmentLeft;
     }

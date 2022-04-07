@@ -127,7 +127,6 @@
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.defaultTitle = @"Check Update";
     
     [self.view addSubview:self.currentLabel];
@@ -181,7 +180,7 @@
 - (UILabel *)currentLabel {
     if (!_currentLabel) {
         _currentLabel = [[UILabel alloc] init];
-        _currentLabel.textColor = RGBCOLOR(38,129,255);
+        _currentLabel.textColor = NAVBAR_COLOR_MACROS;
         _currentLabel.textAlignment = NSTextAlignmentCenter;
         _currentLabel.font = MKFont(14.f);
         _currentLabel.text = @"Current Firmware";
@@ -241,7 +240,7 @@
 - (UIButton *)startButton {
     if (!_startButton) {
         _startButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _startButton.backgroundColor = RGBCOLOR(38,129,255);
+        _startButton.backgroundColor = NAVBAR_COLOR_MACROS;
         _startButton.titleLabel.font = MKFont(14.f);
         [_startButton setTitle:@"Start Update" forState:UIControlStateNormal];
         [_startButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];

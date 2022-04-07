@@ -80,7 +80,7 @@
     self.typeLabel.text = _dataModel.typeMessage;
     self.valueLabel.text = _dataModel.value;
     self.icon.image = LOADICON(@"MKBLEMokoLife", @"MKBMLAboutCell", _dataModel.iconName);
-    self.valueLabel.textColor = (_dataModel.canAdit ? RGBCOLOR(38,129,255) : UIColorFromRGB(0x808080));
+    self.valueLabel.textColor = (_dataModel.canAdit ? NAVBAR_COLOR_MACROS : UIColorFromRGB(0x808080));
     [self setNeedsLayout];
 }
 

@@ -43,10 +43,11 @@ TODO: Add long description of the pod here.
     ss.source_files = 'MKBLEMokoLife/Classes/CTMediator/**'
     
     ss.dependency 'CTMediator'
+    ss.dependency 'MKBaseModuleLibrary'
   end
   
-  s.subspec 'SDK-BML' do |ss|
-    ss.source_files = 'MKBLEMokoLife/Classes/SDK-BML/**'
+  s.subspec 'SDK' do |ss|
+    ss.source_files = 'MKBLEMokoLife/Classes/SDK/**'
     
     ss.dependency 'MKBaseBleModule'
   end
@@ -139,7 +140,6 @@ TODO: Add long description of the pod here.
         
         ssss.dependency 'MKBLEMokoLife/Functions/ScanPage/View'
         
-        ssss.dependency 'MKBLEMokoLife/Functions/AboutPage/Controller'
         ssss.dependency 'MKBLEMokoLife/Functions/TabBarPage/Controller'
       end
       sss.subspec 'View' do |ssss|
@@ -209,7 +209,7 @@ TODO: Add long description of the pod here.
       
     end
     
-    ss.dependency 'MKBLEMokoLife/SDK-BML'
+    ss.dependency 'MKBLEMokoLife/SDK'
     ss.dependency 'MKBLEMokoLife/CTMediator'
     
     ss.dependency 'MKBaseModuleLibrary'

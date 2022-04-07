@@ -111,7 +111,7 @@
     MKNormalTextCellModel *offModel = self.dataList[0];
     if (self.index == 0) {
         offModel.leftIcon = LOADICON(@"MKBLEMokoLife", @"MKBMLModifyPowerStatusController", @"mk_bml_modifyPowerOnSelectedIcon.png");
-        offModel.leftMsgTextColor = RGBCOLOR(38,129,255);
+        offModel.leftMsgTextColor = NAVBAR_COLOR_MACROS;
     }else {
         offModel.leftIcon = LOADICON(@"MKBLEMokoLife", @"MKBMLModifyPowerStatusController", @"mk_bml_modifyPowerOnUnselectedIcon.png");
         offModel.leftMsgTextColor = RGBCOLOR(128, 128, 128);
@@ -120,7 +120,7 @@
     MKNormalTextCellModel *onModel = self.dataList[1];
     if (self.index == 1) {
         onModel.leftIcon = LOADICON(@"MKBLEMokoLife", @"MKBMLModifyPowerStatusController", @"mk_bml_modifyPowerOnSelectedIcon.png");
-        onModel.leftMsgTextColor = RGBCOLOR(38,129,255);
+        onModel.leftMsgTextColor = NAVBAR_COLOR_MACROS;
     }else {
         onModel.leftIcon = LOADICON(@"MKBLEMokoLife", @"MKBMLModifyPowerStatusController", @"mk_bml_modifyPowerOnUnselectedIcon.png");
         onModel.leftMsgTextColor = RGBCOLOR(128, 128, 128);
@@ -129,7 +129,7 @@
     MKNormalTextCellModel *lastModel = self.dataList[2];
     if (self.index == 2) {
         lastModel.leftIcon = LOADICON(@"MKBLEMokoLife", @"MKBMLModifyPowerStatusController", @"mk_bml_modifyPowerOnSelectedIcon.png");
-        lastModel.leftMsgTextColor = RGBCOLOR(38,129,255);
+        lastModel.leftMsgTextColor = NAVBAR_COLOR_MACROS;
     }else {
         lastModel.leftIcon = LOADICON(@"MKBLEMokoLife", @"MKBMLModifyPowerStatusController", @"mk_bml_modifyPowerOnUnselectedIcon.png");
         lastModel.leftMsgTextColor = RGBCOLOR(128, 128, 128);
@@ -139,7 +139,6 @@
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.defaultTitle = @"Modify power on status";
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

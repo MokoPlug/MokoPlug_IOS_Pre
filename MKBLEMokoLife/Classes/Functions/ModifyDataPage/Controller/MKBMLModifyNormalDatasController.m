@@ -117,7 +117,6 @@
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.view.backgroundColor = RGBCOLOR(242, 242, 242);
     self.defaultTitle = [self fetchTitle];
     self.textField = [self loadTextField];
@@ -152,7 +151,7 @@
 - (UIButton *)confirmButton {
     if (!_confirmButton) {
         _confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _confirmButton.backgroundColor = RGBCOLOR(38,129,255);
+        _confirmButton.backgroundColor = NAVBAR_COLOR_MACROS;
         _confirmButton.titleLabel.font = MKFont(18.f);
         [_confirmButton setTitle:@"Confirm" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];

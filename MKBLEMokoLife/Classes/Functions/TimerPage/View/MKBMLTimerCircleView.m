@@ -76,7 +76,7 @@
         _topCircleLayer = [CAShapeLayer layer];
         _topCircleLayer.frame = self.bounds;
         _topCircleLayer.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(30, 30, self.bounds.size.width - 2 * 30, self.bounds.size.height - 2 * 30)].CGPath;
-        _topCircleLayer.strokeColor = RGBCOLOR(38,129,255).CGColor;
+        _topCircleLayer.strokeColor = NAVBAR_COLOR_MACROS.CGColor;
         _topCircleLayer.fillColor = [UIColor clearColor].CGColor;
         _topCircleLayer.lineWidth = 8.f;
         //线的宽度  每条线的间距

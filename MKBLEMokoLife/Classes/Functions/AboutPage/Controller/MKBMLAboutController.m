@@ -21,8 +21,6 @@
 static CGFloat const aboutIconWidth = 110.f;
 static CGFloat const aboutIconHeight = 110.f;
 
-static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1&page_id=208";
-
 @interface MKBMLAboutController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong)UIImageView *aboutIcon;
@@ -62,7 +60,8 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 3) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kLinkUrl] options:@{} completionHandler:nil];
+        [self openWebBrowser];
+        return;
     }
 }
 
@@ -84,13 +83,22 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
 
 #pragma mark -
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.defaultTitle = @"About MOKO";
     [self.rightButton setHidden:YES];
     
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     self.versionLabel.text = [@"V " stringByAppendingString:version];
+    
+    UIImage *image = LOADICON(@"MKBLEMokoLife", @"MKBMLAboutController", @"mk_bml_about114Icon.png");
+    if ([self.deviceType isEqualToString:@"1"]) {
+        //MK115B
+        image = LOADICON(@"MKBLEMokoLife", @"MKBMLAboutController", @"mk_bml_about115Icon.png");
+    }else if ([self.deviceType isEqualToString:@"2"]) {
+        //MK116B
+        image = LOADICON(@"MKBLEMokoLife", @"MKBMLAboutController", @"mk_bml_about116Icon.png");
+    }
+    self.aboutIcon.image = image;
     
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -123,7 +131,7 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
     MKBMLAboutDataModel *linkModel = [[MKBMLAboutDataModel alloc] init];
     linkModel.iconName = @"mk_bml_about_shouceIcon";
     linkModel.typeMessage = @"Manual";
-    linkModel.value = kLinkUrl;
+    linkModel.value = @"https://www.mokosmart.com";
     linkModel.canAdit = YES;
     [self.dataList addObject:linkModel];
     
@@ -148,7 +156,6 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
 - (UIImageView *)aboutIcon{
     if (!_aboutIcon) {
         _aboutIcon = [[UIImageView alloc] init];
-        _aboutIcon.image = LOADICON(@"MKBLEMokoLife", @"MKBMLAboutController", @"mk_bml_aboutIcon.png");
     }
     return _aboutIcon;
 }
@@ -178,7 +185,7 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
     if (!_companyNetLabel) {
         _companyNetLabel = [[UILabel alloc] init];
         _companyNetLabel.textAlignment = NSTextAlignmentCenter;
-        _companyNetLabel.textColor = RGBCOLOR(38,129,255);
+        _companyNetLabel.textColor = NAVBAR_COLOR_MACROS;
         _companyNetLabel.font = MKFont(16.f);
         _companyNetLabel.text = @"www.mokosmart.com";
         [_companyNetLabel addTapAction:self selector:@selector(openWebBrowser)];
@@ -228,20 +235,20 @@ static NSString *const kLinkUrl = @"http://doc.mokotechnology.com/index.php?s=/1
 
 - (UIView *)tableFooter {
     UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, 150.f)];
-    footer.backgroundColor = RGBCOLOR(239, 239, 239);
-    [footer addSubview:self.companyNetLabel];
+    footer.backgroundColor = COLOR_WHITE_MACROS;
+//    [footer addSubview:self.companyNetLabel];
     [footer addSubview:self.companyNameLabel];
     
-    [self.companyNetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(0);
-        make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(-40);
-        make.height.mas_equalTo(MKFont(16).lineHeight);
-    }];
+//    [self.companyNetLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(0);
+//        make.right.mas_equalTo(0);
+//        make.bottom.mas_equalTo(-40);
+//        make.height.mas_equalTo(MKFont(16).lineHeight);
+//    }];
     [self.companyNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.bottom.mas_equalTo(self.companyNetLabel.mas_top).mas_offset(-17);
+        make.bottom.mas_equalTo(-60.f);
         make.height.mas_equalTo(MKFont(17).lineHeight);
     }];
     

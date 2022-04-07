@@ -159,8 +159,8 @@ static CGFloat const buttonHeight = 32.f;
     }
     //正常状态
     NSString *buttonTitle = (self.statusButton.selected ? @"ON" : @"OFF");
-    UIColor *backColor = (self.statusButton.selected ? RGBCOLOR(38,129,255) : COLOR_WHITE_MACROS);
-    UIColor *titleColor = (self.statusButton.selected ? COLOR_WHITE_MACROS : RGBCOLOR(38,129,255));
+    UIColor *backColor = (self.statusButton.selected ? NAVBAR_COLOR_MACROS : COLOR_WHITE_MACROS);
+    UIColor *titleColor = (self.statusButton.selected ? COLOR_WHITE_MACROS : NAVBAR_COLOR_MACROS);
     [self.statusButton setTitleColor:titleColor forState:UIControlStateNormal];
     [self.statusButton setTitle:buttonTitle forState:UIControlStateNormal];
     [self.statusButton setBackgroundColor:backColor];
@@ -172,7 +172,6 @@ static CGFloat const buttonHeight = 32.f;
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.view.backgroundColor = RGBCOLOR(242, 242, 242);
     [self.rightButton setImage:LOADICON(@"MKBLEMokoLife", @"MKBMLPowerController", @"mk_bml_detailIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.circleView];

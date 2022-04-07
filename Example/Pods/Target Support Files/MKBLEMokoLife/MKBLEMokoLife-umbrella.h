@@ -12,6 +12,7 @@
 
 #import "MKBMLApplicationModule.h"
 #import "CTMediator+MKBMLAdd.h"
+#import "MKMokoPlugBMLModuleKey.h"
 #import "MKBMLAboutController.h"
 #import "MKBMLAboutDataModel.h"
 #import "MKBMLAboutCell.h"
@@ -53,7 +54,7 @@
 #import "MKBMLPeripheral.h"
 #import "MKBMLSDK.h"
 #import "MKBMLTaskAdopter.h"
-#import "Target_BML_Module.h"
+#import "Target_MokoPlug_BML_Module.h"
 
 FOUNDATION_EXPORT double MKBLEMokoLifeVersionNumber;
 FOUNDATION_EXPORT const unsigned char MKBLEMokoLifeVersionString[];

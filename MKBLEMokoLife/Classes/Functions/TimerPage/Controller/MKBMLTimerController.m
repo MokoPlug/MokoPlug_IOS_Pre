@@ -185,7 +185,6 @@ static CGFloat const buttonHeight = 32.f;
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.view.backgroundColor = RGBCOLOR(242, 242, 242);
     [self.rightButton setImage:LOADICON(@"MKBLEMokoLife", @"MKBMLPowerController", @"mk_bml_detailIcon.png") forState:UIControlStateNormal];
     [self.view addSubview:self.circleView];
@@ -244,7 +243,7 @@ static CGFloat const buttonHeight = 32.f;
 - (UILabel *)timerLabel {
     if (!_timerLabel) {
         _timerLabel = [[UILabel alloc] init];
-        _timerLabel.textColor = RGBCOLOR(38,129,255);
+        _timerLabel.textColor = NAVBAR_COLOR_MACROS;
         _timerLabel.textAlignment = NSTextAlignmentCenter;
         _timerLabel.font = MKFont(30.f);
         _timerLabel.text = @"Timer";
@@ -255,7 +254,7 @@ static CGFloat const buttonHeight = 32.f;
 - (UIButton *)timerButton {
     if (!_timerButton) {
         _timerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _timerButton.backgroundColor = RGBCOLOR(38,129,255);
+        _timerButton.backgroundColor = NAVBAR_COLOR_MACROS;
         _timerButton.titleLabel.font = MKFont(15.f);
         [_timerButton setTitle:@"Set timer" forState:UIControlStateNormal];
         [_timerButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];

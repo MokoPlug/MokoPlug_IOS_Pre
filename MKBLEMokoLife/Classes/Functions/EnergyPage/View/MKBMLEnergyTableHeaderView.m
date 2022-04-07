@@ -141,7 +141,7 @@
 - (UILabel *)energyValueLabel {
     if (!_energyValueLabel) {
         _energyValueLabel = [[UILabel alloc] init];
-        _energyValueLabel.textColor = RGBCOLOR(38,129,255);
+        _energyValueLabel.textColor = NAVBAR_COLOR_MACROS;
         _energyValueLabel.font = MKFont(30.f);
         _energyValueLabel.textAlignment = NSTextAlignmentCenter;
         _energyValueLabel.text = @"0.0";

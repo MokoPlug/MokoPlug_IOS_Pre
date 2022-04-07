@@ -155,7 +155,7 @@ static CGFloat const circleLabelViewOffset = 23.f;
         _topCircleLayer = [CAShapeLayer layer];
         _topCircleLayer.frame = self.bounds;
         _topCircleLayer.path = [self circleLayerPath].CGPath;
-        _topCircleLayer.strokeColor = RGBCOLOR(38,129,255).CGColor;
+        _topCircleLayer.strokeColor = NAVBAR_COLOR_MACROS.CGColor;
         _topCircleLayer.fillColor = [UIColor clearColor].CGColor;
         _topCircleLayer.lineWidth = 12.f;
         //线的宽度  每条线的间距

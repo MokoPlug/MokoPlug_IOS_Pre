@@ -23,11 +23,6 @@
       "MKBLEMokoLife/Assets/*.png"
     ]
   },
-  "dependencies": {
-    "CTMediator": [
-
-    ]
-  },
   "subspecs": [
     {
       "name": "ApplicationModule",
@@ -40,11 +35,19 @@
     },
     {
       "name": "CTMediator",
-      "source_files": "MKBLEMokoLife/Classes/CTMediator/**"
+      "source_files": "MKBLEMokoLife/Classes/CTMediator/**",
+      "dependencies": {
+        "CTMediator": [
+
+        ],
+        "MKBaseModuleLibrary": [
+
+        ]
+      }
     },
     {
-      "name": "SDK-BML",
-      "source_files": "MKBLEMokoLife/Classes/SDK-BML/**",
+      "name": "SDK",
+      "source_files": "MKBLEMokoLife/Classes/SDK/**",
       "dependencies": {
         "MKBaseBleModule": [
 
@@ -63,7 +66,7 @@
     {
       "name": "Functions",
       "dependencies": {
-        "MKBLEMokoLife/SDK-BML": [
+        "MKBLEMokoLife/SDK": [
 
         ],
         "MKBLEMokoLife/CTMediator": [
@@ -213,9 +216,6 @@
               "source_files": "MKBLEMokoLife/Classes/Functions/ScanPage/Controller/**",
               "dependencies": {
                 "MKBLEMokoLife/Functions/ScanPage/View": [
-
-                ],
-                "MKBLEMokoLife/Functions/AboutPage/Controller": [
 
                 ],
                 "MKBLEMokoLife/Functions/TabBarPage/Controller": [

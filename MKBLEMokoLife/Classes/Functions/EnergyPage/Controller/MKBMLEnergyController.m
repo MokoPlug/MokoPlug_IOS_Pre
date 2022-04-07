@@ -116,10 +116,10 @@
 
 #pragma mark - private method
 - (void)reloadSubViews {
-    UIColor *dailyTitleColor = (self.selectedIndex == 0 ? COLOR_WHITE_MACROS : RGBCOLOR(38,129,255));
-    UIColor *monthlyTitleColor = (self.selectedIndex == 1 ? COLOR_WHITE_MACROS : RGBCOLOR(38,129,255));
-    UIColor *dailyBackColor = (self.selectedIndex == 0 ? RGBCOLOR(38,129,255) : COLOR_WHITE_MACROS);
-    UIColor *monthlyBackColor = (self.selectedIndex == 1 ? RGBCOLOR(38,129,255) : COLOR_WHITE_MACROS);
+    UIColor *dailyTitleColor = (self.selectedIndex == 0 ? COLOR_WHITE_MACROS : NAVBAR_COLOR_MACROS);
+    UIColor *monthlyTitleColor = (self.selectedIndex == 1 ? COLOR_WHITE_MACROS : NAVBAR_COLOR_MACROS);
+    UIColor *dailyBackColor = (self.selectedIndex == 0 ? NAVBAR_COLOR_MACROS : COLOR_WHITE_MACROS);
+    UIColor *monthlyBackColor = (self.selectedIndex == 1 ? NAVBAR_COLOR_MACROS : COLOR_WHITE_MACROS);
     [self.dailyButton setTitleColor:dailyTitleColor forState:UIControlStateNormal];
     [self.dailyButton setBackgroundColor:dailyBackColor];
     [self.monthlyButton setTitleColor:monthlyTitleColor forState:UIControlStateNormal];
@@ -130,7 +130,6 @@
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     [self.rightButton setImage:LOADICON(@"MKBLEMokoLife", @"MKBMLPowerController", @"mk_bml_detailIcon.png") forState:UIControlStateNormal];
     self.view.backgroundColor = COLOR_WHITE_MACROS;
     [self.view addSubview:self.segment];
@@ -163,7 +162,7 @@
     if (!_segment) {
         _segment = [[UIView alloc] init];
         _segment.layer.masksToBounds = YES;
-        _segment.layer.borderColor = RGBCOLOR(38,129,255).CGColor;
+        _segment.layer.borderColor = NAVBAR_COLOR_MACROS.CGColor;
         _segment.layer.borderWidth = 0.5f;
         _segment.layer.cornerRadius = 16.f;
     }
@@ -173,7 +172,7 @@
 - (UIButton *)dailyButton {
     if (!_dailyButton) {
         _dailyButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _dailyButton.backgroundColor = RGBCOLOR(38,129,255);
+        _dailyButton.backgroundColor = NAVBAR_COLOR_MACROS;
         _dailyButton.titleLabel.font = MKFont(14.f);
         [_dailyButton setTitle:@"Daily" forState:UIControlStateNormal];
         [_dailyButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];
@@ -198,7 +197,7 @@
         _monthlyButton.backgroundColor = COLOR_WHITE_MACROS;
         _monthlyButton.titleLabel.font = MKFont(14.f);
         [_monthlyButton setTitle:@"Monthly" forState:UIControlStateNormal];
-        [_monthlyButton setTitleColor:RGBCOLOR(38,129,255) forState:UIControlStateNormal];
+        [_monthlyButton setTitleColor:NAVBAR_COLOR_MACROS forState:UIControlStateNormal];
         [_monthlyButton addTarget:self
                            action:@selector(monthlyButtonPressed)
                  forControlEvents:UIControlEventTouchUpInside];

@@ -23,13 +23,14 @@
 #import "MKCustomUIAdopter.h"
 #import "MKAlertController.h"
 
+#import "CTMediator+MKBMLAdd.h"
+
 #import "MKBMLSDK.h"
 
 #import "MKBMLScanFilterView.h"
 #import "MKBMLScanSearchButton.h"
 #import "MKBMLScanPageCell.h"
 
-#import "MKBMLAboutController.h"
 #import "MKBMLTabBarController.h"
 
 static CGFloat const offset_X = 15.f;
@@ -71,6 +72,8 @@ MKBMLTabBarControllerDelegate>
 
 @property (nonatomic, strong)MKBMLScanSearchButton *searchButton;
 
+@property (nonatomic, strong)UIButton *refreshButton;
+
 @property (nonatomic, strong)UIImageView *refreshIcon;
 
 @property (nonatomic, strong)dispatch_source_t scanTimer;
@@ -102,30 +105,9 @@ MKBMLTabBarControllerDelegate>
 }
 
 #pragma mark - super method
-- (void)leftButtonMethod {
-    if ([MKBMLCentralManager shared].centralStatus != mk_bml_centralManagerStatusEnable) {
-        [self.view showCentralToast:@"The current system of bluetooth is not available!"];
-        return;
-    }
-    self.leftButton.selected = !self.leftButton.selected;
-    [self.refreshIcon.layer removeAnimationForKey:@"mk_refreshAnimationKey"];
-    if (!self.leftButton.isSelected) {
-        //停止扫描
-        [[MKBMLCentralManager shared] stopScan];
-        if (self.scanTimer) {
-            dispatch_cancel(self.scanTimer);
-        }
-        return;
-    }
-    [self.identifyCache removeAllObjects];
-    [self.dataList removeAllObjects];
-    [self.tableView reloadData];
-    [self.refreshIcon.layer addAnimation:[MKCustomUIAdopter refreshAnimation:2.f] forKey:@"mk_refreshAnimationKey"];
-    [self scanTimerRun];
-}
 
 - (void)rightButtonMethod {
-    MKBMLAboutController *vc = [[MKBMLAboutController alloc] init];
+    UIViewController *vc = [[CTMediator sharedInstance] CTMediator_MokoPlug_BML_AboutPage:SafeStr(self.deviceType)];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -164,16 +146,16 @@ MKBMLTabBarControllerDelegate>
         self.buttonModel.searchName = searchKey;
         self.searchButton.dataModel = self.buttonModel;
         
-        self.leftButton.selected = NO;
-        [self leftButtonMethod];
+        self.refreshButton.selected = NO;
+        [self refreshButtonPressed];
     }];
 }
 
 - (void)bml_scanSearchButtonClearMethod {
     self.buttonModel.searchRssi = -100;
     self.buttonModel.searchName = @"";
-    self.leftButton.selected = NO;
-    [self leftButtonMethod];
+    self.refreshButton.selected = NO;
+    [self refreshButtonPressed];
 }
 
 #pragma mark - mk_bml_centralManagerScanDelegate
@@ -183,9 +165,9 @@ MKBMLTabBarControllerDelegate>
 
 - (void)mk_bml_stopScan {
     //如果是左上角在动画，则停止动画
-    if (self.leftButton.isSelected) {
+    if (self.refreshButton.isSelected) {
         [self.refreshIcon.layer removeAnimationForKey:@"mk_refreshAnimationKey"];
-        [self.leftButton setSelected:NO];
+        [self.refreshButton setSelected:NO];
     }
 }
 
@@ -195,6 +177,29 @@ MKBMLTabBarControllerDelegate>
         [MKBMLCentralManager shared].delegate = self;
     }
     [self performSelector:@selector(startScanDevice) withObject:nil afterDelay:(need ? 1.f : 0.1f)];
+}
+
+#pragma mark - event method
+- (void)refreshButtonPressed {
+    if ([MKBMLCentralManager shared].centralStatus != mk_bml_centralManagerStatusEnable) {
+        [self.view showCentralToast:@"The current system of bluetooth is not available!"];
+        return;
+    }
+    self.refreshButton.selected = !self.refreshButton.selected;
+    [self.refreshIcon.layer removeAnimationForKey:@"mk_refreshAnimationKey"];
+    if (!self.refreshButton.isSelected) {
+        //停止扫描
+        [[MKBMLCentralManager shared] stopScan];
+        if (self.scanTimer) {
+            dispatch_cancel(self.scanTimer);
+        }
+        return;
+    }
+    [self.identifyCache removeAllObjects];
+    [self.dataList removeAllObjects];
+    [self.tableView reloadData];
+    [self.refreshIcon.layer addAnimation:[MKCustomUIAdopter refreshAnimation:2.f] forKey:@"mk_refreshAnimationKey"];
+    [self scanTimerRun];
 }
 
 #pragma mark - notice method
@@ -210,13 +215,13 @@ MKBMLTabBarControllerDelegate>
         [self presentViewController:alertController animated:YES completion:nil];
         return;
     }
-    [self leftButtonMethod];
+    [self refreshButtonPressed];
 }
 
 #pragma mark - 刷新
 - (void)startScanDevice {
-    self.leftButton.selected = NO;
-    [self leftButtonMethod];
+    self.refreshButton.selected = NO;
+    [self refreshButtonPressed];
 }
 
 - (void)scanTimerRun{
@@ -370,8 +375,8 @@ MKBMLTabBarControllerDelegate>
 }
 
 - (void)connectFailed {
-    self.leftButton.selected = NO;
-    [self leftButtonMethod];
+    self.refreshButton.selected = NO;
+    [self refreshButtonPressed];
 }
 
 #pragma mark -
@@ -379,6 +384,7 @@ MKBMLTabBarControllerDelegate>
     self.searchButton.dataModel = self.buttonModel;
     [self runloopObserver];
     [MKBMLCentralManager shared].delegate = self;
+    /*
     //此处延时3.5s，与启动页加载3.5s对应，另外第一次安装的时候有蓝牙弹窗授权，也需要延时用来防止出现获取权限的时候出现蓝牙未打开的情况。
     //新的业务需求，第一次安装app的时候，需要用户手动点击左上角开启扫描，后面每次需要自动开启扫描     20210413
     NSNumber *install = [[NSUserDefaults standardUserDefaults] objectForKey:@"mk_bml_installedKey"];
@@ -386,48 +392,51 @@ MKBMLTabBarControllerDelegate>
         //第一次安装
         [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"mk_bml_installedKey"];
         return;
-    }
-    [self performSelector:@selector(showCentralStatus) withObject:nil afterDelay:3.5f];
+    }*/
+    [self performSelector:@selector(showCentralStatus) withObject:nil afterDelay:.5f];
 }
 
 #pragma mark - UI
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     [self.view setBackgroundColor:RGBCOLOR(245, 245, 245)];
     [self.rightButton setImage:LOADICON(@"MKBLEMokoLife", @"MKBMLScanController", @"mk_bml_scanRightAboutIcon.png") forState:UIControlStateNormal];
     self.titleLabel.text = @"Moko Plug";
-    [self.leftButton setImage:nil forState:UIControlStateNormal];
-    [self.leftButton addSubview:self.refreshIcon];
-    [self.refreshIcon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.leftButton.mas_centerX);
-        make.width.mas_equalTo(22.f);
-        make.centerY.mas_equalTo(self.leftButton.mas_centerY);
-        make.height.mas_equalTo(22.f);
-    }];
-    UIView *headerView = [[UIView alloc] init];
-    
-    [self.view addSubview:headerView];
-    [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(offset_X);
-        make.right.mas_equalTo(-offset_X);
-        make.top.mas_equalTo(defaultTopInset);
-        make.height.mas_equalTo(searchButtonHeight + 2 * offset_X);
-    }];
-    
-    [headerView addSubview:self.searchButton];
-    [self.searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIView *topView = [[UIView alloc] init];
+    topView.backgroundColor = RGBCOLOR(237, 243, 250);
+    [self.view addSubview:topView];
+    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.top.mas_equalTo(offset_X);
+        make.top.mas_equalTo(defaultTopInset);
+        make.height.mas_equalTo(searchButtonHeight + 2 * 15.f);
+    }];
+    [self.refreshButton addSubview:self.refreshIcon];
+    [topView addSubview:self.refreshButton];
+    [self.refreshIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.refreshButton.mas_centerX);
+        make.centerY.mas_equalTo(self.refreshButton.mas_centerY);
+        make.width.mas_equalTo(22.f);
+        make.height.mas_equalTo(22.f);
+    }];
+    [self.refreshButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(-15.f);
+        make.width.mas_equalTo(40.f);
+        make.top.mas_equalTo(15.f);
+        make.height.mas_equalTo(40.f);
+    }];
+    [topView addSubview:self.searchButton];
+    [self.searchButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(15.f);
+        make.right.mas_equalTo(self.refreshButton.mas_left).mas_offset(-10.f);
+        make.top.mas_equalTo(15.f);
         make.height.mas_equalTo(searchButtonHeight);
     }];
-    
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10.f);
         make.right.mas_equalTo(-10.f);
-        make.top.mas_equalTo(headerView.mas_bottom);
-        make.bottom.mas_equalTo(-VirtualHomeHeight);
+        make.top.mas_equalTo(topView.mas_bottom);
+        make.bottom.mas_equalTo(-VirtualHomeHeight - 5.f);
     }];
 }
 
@@ -445,9 +454,19 @@ MKBMLTabBarControllerDelegate>
 - (UIImageView *)refreshIcon {
     if (!_refreshIcon) {
         _refreshIcon = [[UIImageView alloc] init];
-        _refreshIcon.image = LOADICON(@"MKBLEMokoLife", @"MKBMLScanController", @"mk_bml_scanRefresh.png");
+        _refreshIcon.image = LOADICON(@"MKBLEMokoLife", @"MKBMLScanController", @"mk_bml_scan_refreshIcon.png");
     }
     return _refreshIcon;
+}
+
+- (UIButton *)refreshButton {
+    if (!_refreshButton) {
+        _refreshButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_refreshButton addTarget:self
+                           action:@selector(refreshButtonPressed)
+                 forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _refreshButton;
 }
 
 - (MKBMLScanSearchButton *)searchButton {

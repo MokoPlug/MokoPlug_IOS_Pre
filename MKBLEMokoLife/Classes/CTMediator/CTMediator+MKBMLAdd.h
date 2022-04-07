@@ -12,6 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CTMediator (MKBMLAdd)
 
+/// 关于页面
+/// @param deviceType 设备类型
+/*
+ @"0":MK114B
+ @"1":MK115B
+ @"2":MK116B
+ */
+- (UIViewController *)CTMediator_MokoPlug_BML_AboutPage:(NSString *)deviceType;
+
 @end
 
 NS_ASSUME_NONNULL_END

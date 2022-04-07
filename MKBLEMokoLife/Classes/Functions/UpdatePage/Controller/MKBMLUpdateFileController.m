@@ -128,7 +128,6 @@
 }
 
 - (void)loadSubViews {
-    self.custom_naviBarColor = RGBCOLOR(38,129,255);
     self.defaultTitle = @"OTA";
     [self.rightButton setHidden:YES];
     [self.view addSubview:self.tableView];

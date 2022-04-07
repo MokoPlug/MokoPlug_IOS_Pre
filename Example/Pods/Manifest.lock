@@ -46,19 +46,17 @@ PODS:
   - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.4)
   - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.4)
   - MKBLEMokoLife (1.0.2):
-    - CTMediator
     - MKBLEMokoLife/ApplicationModule (= 1.0.2)
     - MKBLEMokoLife/CTMediator (= 1.0.2)
     - MKBLEMokoLife/Functions (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML (= 1.0.2)
+    - MKBLEMokoLife/SDK (= 1.0.2)
     - MKBLEMokoLife/Target (= 1.0.2)
   - MKBLEMokoLife/ApplicationModule (1.0.2):
-    - CTMediator
     - MKBaseModuleLibrary
   - MKBLEMokoLife/CTMediator (1.0.2):
     - CTMediator
+    - MKBaseModuleLibrary
   - MKBLEMokoLife/Functions (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
@@ -73,226 +71,201 @@ PODS:
     - MKBLEMokoLife/Functions/TabBarPage (= 1.0.2)
     - MKBLEMokoLife/Functions/TimerPage (= 1.0.2)
     - MKBLEMokoLife/Functions/UpdatePage (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/AboutPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/AboutPage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/AboutPage/Model (= 1.0.2)
     - MKBLEMokoLife/Functions/AboutPage/View (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/AboutPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/AboutPage/Model
     - MKBLEMokoLife/Functions/AboutPage/View
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/AboutPage/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/AboutPage/View (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/AboutPage/Model
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/DeviceInfo (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/DeviceInfo/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/DeviceInfo/Model (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/DeviceInfo/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/DeviceInfo/Model
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/DeviceInfo/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/EnergyPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/EnergyPage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/EnergyPage/Model (= 1.0.2)
     - MKBLEMokoLife/Functions/EnergyPage/View (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/EnergyPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/DeviceInfo/Controller
     - MKBLEMokoLife/Functions/EnergyPage/Model
     - MKBLEMokoLife/Functions/EnergyPage/View
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/EnergyPage/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/EnergyPage/View (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ModifyDataPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/ModifyDataPage/Controller (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ModifyDataPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ModifyPowerStatusPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/ModifyPowerStatusPage/Controller (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ModifyPowerStatusPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/PowerPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/PowerPage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/PowerPage/Model (= 1.0.2)
     - MKBLEMokoLife/Functions/PowerPage/View (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/PowerPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/DeviceInfo/Controller
     - MKBLEMokoLife/Functions/PowerPage/Model
     - MKBLEMokoLife/Functions/PowerPage/View
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/PowerPage/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/PowerPage/View (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ScanPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/ScanPage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/ScanPage/View (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ScanPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/Functions/AboutPage/Controller
     - MKBLEMokoLife/Functions/ScanPage/View
     - MKBLEMokoLife/Functions/TabBarPage/Controller
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/ScanPage/View (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/SettingPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/SettingPage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/SettingPage/Model (= 1.0.2)
     - MKBLEMokoLife/Functions/SettingPage/View (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/SettingPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
@@ -302,36 +275,32 @@ PODS:
     - MKBLEMokoLife/Functions/SettingPage/Model
     - MKBLEMokoLife/Functions/SettingPage/View
     - MKBLEMokoLife/Functions/UpdatePage/Controller
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/SettingPage/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/SettingPage/View (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/TabBarPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/TabBarPage/Controller (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/TabBarPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
@@ -339,82 +308,73 @@ PODS:
     - MKBLEMokoLife/Functions/PowerPage/Controller
     - MKBLEMokoLife/Functions/SettingPage/Controller
     - MKBLEMokoLife/Functions/TimerPage/Controller
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/TimerPage (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/TimerPage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/TimerPage/Model (= 1.0.2)
     - MKBLEMokoLife/Functions/TimerPage/View (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/TimerPage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/DeviceInfo/Controller
     - MKBLEMokoLife/Functions/TimerPage/Model
     - MKBLEMokoLife/Functions/TimerPage/View
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/TimerPage/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/TimerPage/View (1.0.2):
-    - CTMediator
     - HHTransition
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/UpdatePage (1.0.2):
-    - CTMediator
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/UpdatePage/Controller (= 1.0.2)
     - MKBLEMokoLife/Functions/UpdatePage/Model (= 1.0.2)
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/UpdatePage/Controller (1.0.2):
-    - CTMediator
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
     - MKBLEMokoLife/Functions/UpdatePage/Model
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
   - MKBLEMokoLife/Functions/UpdatePage/Model (1.0.2):
-    - CTMediator
     - HHTransition
     - iOSDFULibrary
     - MKBaseModuleLibrary
     - MKBLEMokoLife/CTMediator
-    - MKBLEMokoLife/SDK-BML
+    - MKBLEMokoLife/SDK
     - MKCustomUIModule
     - MLInputDodger
-  - MKBLEMokoLife/SDK-BML (1.0.2):
-    - CTMediator
+  - MKBLEMokoLife/SDK (1.0.2):
     - MKBaseBleModule
   - MKBLEMokoLife/Target (1.0.2):
-    - CTMediator
     - MKBLEMokoLife/Functions
   - MKCustomUIModule (1.4.0):
     - CircleProgressBar
@@ -824,7 +784,7 @@ SPEC CHECKSUMS:
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   MKBaseBleModule: 6019b69cf3c5a220b1cfe18e71e1e5e63f4757da
   MKBaseModuleLibrary: 859013194f81daa5f8a7a777ce88bf58cd3b5919
-  MKBLEMokoLife: a28a1d7c1c41ef37c21d009adca5eb6dc674ff66
+  MKBLEMokoLife: ef6220f9104bc563317d06a84ac9f9c26fd8cf5c
   MKCustomUIModule: 91646517fc7a90d94dd5578d119fec38d67d6a90
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
