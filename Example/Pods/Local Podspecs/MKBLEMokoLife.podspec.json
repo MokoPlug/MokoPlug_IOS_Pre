@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "summary": "A short description of MKBLEMokoLife.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/MokoPlug/MokoPlug_iOS",
+  "homepage": "https://github.com/MokoPlug/MokoPlug_IOS_Pre",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "aadyx2007@163.com": "aadyx2007@163.com"
   },
   "source": {
-    "git": "https://github.com/MokoPlug/MokoPlug_iOS.git",
+    "git": "https://github.com/MokoPlug/MokoPlug_IOS_Pre.git",
     "tag": "1.0.2"
   },
   "platforms": {
