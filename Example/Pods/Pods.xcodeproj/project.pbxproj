@@ -5159,21 +5159,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		04F4C8EABB65A6EF888B38E6821E8DD0 /* Debug */ = {
+		01131BF52A7393DE1FA1BE728FF49836 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE71575567E4F8156CC4490A19C3F06B /* MKBLEMokoLife.debug.xcconfig */;
+			baseConfigurationReference = D2A9795A1FA0ACDF9F00B1539483FE04 /* MKBaseModuleLibrary.release.xcconfig */;
 			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBLEMokoLife";
-				IBSC_MODULE = MKBLEMokoLife;
-				INFOPLIST_FILE = "Target Support Files/MKBLEMokoLife/ResourceBundle-MKBLEMokoLife-MKBLEMokoLife-Info.plist";
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBaseModuleLibrary";
+				IBSC_MODULE = MKBaseModuleLibrary;
+				INFOPLIST_FILE = "Target Support Files/MKBaseModuleLibrary/ResourceBundle-MKBaseModuleLibrary-MKBaseModuleLibrary-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MKBLEMokoLife;
+				PRODUCT_NAME = MKBaseModuleLibrary;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		0DA171F2BC8EA5373A85C8A28DBE562D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -5205,6 +5206,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		11DE196A900D0E15182B5805590ABE66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B595370AA23CC6EB82B499CC8BD21C60 /* iOSDFULibrary.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iOSDFULibrary/iOSDFULibrary-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary.modulemap";
+				PRODUCT_MODULE_NAME = iOSDFULibrary;
+				PRODUCT_NAME = iOSDFULibrary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		13880D5F93EDFCE7E273B05B660F6D54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -5462,6 +5495,23 @@
 			};
 			name = Release;
 		};
+		380652771C34308F657B0788CFE4B095 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E11899FF473EDF800357E40C51A00FF /* MKCustomUIModule.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKCustomUIModule";
+				IBSC_MODULE = MKCustomUIModule;
+				INFOPLIST_FILE = "Target Support Files/MKCustomUIModule/ResourceBundle-MKCustomUIModule-MKCustomUIModule-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MKCustomUIModule;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		380A83ADC20958689EF092CA546FC0E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FDC0190FC5977B9CFE0D72BA666B38E6 /* CircleProgressBar.debug.xcconfig */;
@@ -5591,7 +5641,7 @@
 			};
 			name = Debug;
 		};
-		4D91C9BCF691CD5924EC53E218ADB4A6 /* Debug */ = {
+		5D9F8A9BCE9CF9F1458DDCB85F7BEC3D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2A2DE94761E23C87493518B9DACE467C /* iOSDFULibrary.debug.xcconfig */;
 			buildSettings = {
@@ -5615,44 +5665,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.5;
+				SWIFT_VERSION = 5.6;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		565C1B69B27E9A1E031EF3E1A447C276 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB4D56BCF88052339C04BC050F604C16 /* MKBLEMokoLife.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBLEMokoLife";
-				IBSC_MODULE = MKBLEMokoLife;
-				INFOPLIST_FILE = "Target Support Files/MKBLEMokoLife/ResourceBundle-MKBLEMokoLife-MKBLEMokoLife-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MKBLEMokoLife;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		5958AB67F300BA43A2EF0C0E59AF2C37 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2A9795A1FA0ACDF9F00B1539483FE04 /* MKBaseModuleLibrary.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBaseModuleLibrary";
-				IBSC_MODULE = MKBaseModuleLibrary;
-				INFOPLIST_FILE = "Target Support Files/MKBaseModuleLibrary/ResourceBundle-MKBaseModuleLibrary-MKBaseModuleLibrary-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MKBaseModuleLibrary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
 		};
 		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -5746,6 +5764,57 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		70766AA343C365F3B545201AD8CA0AA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59DC59AC66AA39E88D667F12A1CA563A /* MKBaseModuleLibrary.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBaseModuleLibrary";
+				IBSC_MODULE = MKBaseModuleLibrary;
+				INFOPLIST_FILE = "Target Support Files/MKBaseModuleLibrary/ResourceBundle-MKBaseModuleLibrary-MKBaseModuleLibrary-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MKBaseModuleLibrary;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		712561A04B241AC7B09CB193E18B665C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1257A707D868AFCC4BEC9A2198A63B7 /* MKCustomUIModule.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKCustomUIModule";
+				IBSC_MODULE = MKCustomUIModule;
+				INFOPLIST_FILE = "Target Support Files/MKCustomUIModule/ResourceBundle-MKCustomUIModule-MKCustomUIModule-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MKCustomUIModule;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		760B1E0421C32EB2AC4510CB4B2C6BAE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB4D56BCF88052339C04BC050F604C16 /* MKBLEMokoLife.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBLEMokoLife";
+				IBSC_MODULE = MKBLEMokoLife;
+				INFOPLIST_FILE = "Target Support Files/MKBLEMokoLife/ResourceBundle-MKBLEMokoLife-MKBLEMokoLife-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MKBLEMokoLife;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		79FDD035F8A156E9E617620960673CE5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -6134,6 +6203,23 @@
 			};
 			name = Release;
 		};
+		C2CCA02EE3F8F4826D7714E7A025D965 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE71575567E4F8156CC4490A19C3F06B /* MKBLEMokoLife.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBLEMokoLife";
+				IBSC_MODULE = MKBLEMokoLife;
+				INFOPLIST_FILE = "Target Support Files/MKBLEMokoLife/ResourceBundle-MKBLEMokoLife-MKBLEMokoLife-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = MKBLEMokoLife;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		C70412560EA946DEF73AD15440AE60B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D34ABAD0DE336D81E870847478C1573 /* WRNavigationBar.debug.xcconfig */;
@@ -6293,70 +6379,6 @@
 			};
 			name = Release;
 		};
-		EE8B814845BBA4C8C22A26D280213C6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B595370AA23CC6EB82B499CC8BD21C60 /* iOSDFULibrary.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/iOSDFULibrary/iOSDFULibrary-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/iOSDFULibrary/iOSDFULibrary.modulemap";
-				PRODUCT_MODULE_NAME = iOSDFULibrary;
-				PRODUCT_NAME = iOSDFULibrary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F20C41A41E1DFBF6644697C881C5C020 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E11899FF473EDF800357E40C51A00FF /* MKCustomUIModule.release.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKCustomUIModule";
-				IBSC_MODULE = MKCustomUIModule;
-				INFOPLIST_FILE = "Target Support Files/MKCustomUIModule/ResourceBundle-MKCustomUIModule-MKCustomUIModule-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MKCustomUIModule;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		F4544091C68E581AC347634D6AFD79FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1257A707D868AFCC4BEC9A2198A63B7 /* MKCustomUIModule.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKCustomUIModule";
-				IBSC_MODULE = MKCustomUIModule;
-				INFOPLIST_FILE = "Target Support Files/MKCustomUIModule/ResourceBundle-MKCustomUIModule-MKCustomUIModule-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MKCustomUIModule;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 		F76EC2438C578BBD59D5D07A09F80DDB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD246B07E1DB18517CDB7FA559122FED /* MBProgressHUD.release.xcconfig */;
@@ -6388,22 +6410,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		FC9BD93E9994BE03AD01CE35DB6E65EA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 59DC59AC66AA39E88D667F12A1CA563A /* MKBaseModuleLibrary.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/MKBaseModuleLibrary";
-				IBSC_MODULE = MKBaseModuleLibrary;
-				INFOPLIST_FILE = "Target Support Files/MKBaseModuleLibrary/ResourceBundle-MKBaseModuleLibrary-MKBaseModuleLibrary-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = MKBaseModuleLibrary;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -6474,8 +6480,8 @@
 		446C9332F16C87ED169E05A68515983E /* Build configuration list for PBXNativeTarget "MKBaseModuleLibrary-MKBaseModuleLibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC9BD93E9994BE03AD01CE35DB6E65EA /* Debug */,
-				5958AB67F300BA43A2EF0C0E59AF2C37 /* Release */,
+				70766AA343C365F3B545201AD8CA0AA9 /* Debug */,
+				01131BF52A7393DE1FA1BE728FF49836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6501,8 +6507,8 @@
 		6A051EF79C5C9E9A94368F52B75F83C8 /* Build configuration list for PBXNativeTarget "MKBLEMokoLife-MKBLEMokoLife" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04F4C8EABB65A6EF888B38E6821E8DD0 /* Debug */,
-				565C1B69B27E9A1E031EF3E1A447C276 /* Release */,
+				C2CCA02EE3F8F4826D7714E7A025D965 /* Debug */,
+				760B1E0421C32EB2AC4510CB4B2C6BAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6519,8 +6525,8 @@
 		9BD4F194114D13F4D2A446FC7E930B17 /* Build configuration list for PBXNativeTarget "MKCustomUIModule-MKCustomUIModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F4544091C68E581AC347634D6AFD79FB /* Debug */,
-				F20C41A41E1DFBF6644697C881C5C020 /* Release */,
+				712561A04B241AC7B09CB193E18B665C /* Debug */,
+				380652771C34308F657B0788CFE4B095 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -6546,8 +6552,8 @@
 		B4A18E8BD1BEB4AD0BCBE5319CC6D1D4 /* Build configuration list for PBXNativeTarget "iOSDFULibrary" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D91C9BCF691CD5924EC53E218ADB4A6 /* Debug */,
-				EE8B814845BBA4C8C22A26D280213C6C /* Release */,
+				5D9F8A9BCE9CF9F1458DDCB85F7BEC3D /* Debug */,
+				11DE196A900D0E15182B5805590ABE66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
